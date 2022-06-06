@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
+    "lib": ["dom", "esnext"],
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "module": "esnext",
+    "target": "es6",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      // 根据别名配置相关路径
+      "@/*": ["./src/*"]
+    }
+  },
+  "typeRoots": ["node_modules/@types"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "./src/__tests__"]
+}
