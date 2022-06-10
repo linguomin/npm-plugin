@@ -34,6 +34,11 @@ const config: webpack.Configuration = {
         test: /\.m?ts$/,
         use: 'ts-loader',
         exclude: /(node_modules|bower_components)/
+      },
+      {
+        test: /\.m?ts$/,
+        use: 'babel-loader',
+        exclude: /(node_modules|bower_components)/
       }
     ]
   },

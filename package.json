@@ -7,12 +7,14 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "webpack server --mode development --progress",
-    "build": "cross-env NODE_ENV=production webpack --mode production --progress",
+    "build": "npm run type-check && cross-env NODE_ENV=production webpack --mode production --progress",
     "format": "npm run lint && prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "lint": "eslint src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.eslintignore",
     "prepare": "husky install",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "type-check": "npx tsc --noEmit",
+    "type-check-watch": "npx tsc --noEmit --watch"
   },
   "files": [
     "dist",
@@ -30,6 +32,7 @@
     "@babel/core": "^7.18.2",
     "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@types/jest": "^28.1.1",
@@ -37,6 +40,7 @@
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.16.0",
