@@ -27,7 +27,7 @@ const config: webpack.Configuration = {
     alias: { '@': path.resolve(__dirname, './src') },
     extensions: ['.ts', '.js']
   },
-  // devtool: process.env.NODE_ENV === 'production' ? 'none' : 'inline-source-map',
+  devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',
   module: {
     rules: [
       {
